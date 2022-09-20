@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t Environment-Variables-and-Travis .
-  - docker tag Environment-Variables-and-Travis chigoziemi/Environment-Variables-and-Travis:latest
+  - docker build -t environment-variables-and-travis .
+  - docker tag environment-variables-and-travis chigoziemi/environment-variables-and-travis:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push chigoziemi/Environment-Variables-and-Travis
+  - docker push chigoziemi/environment-variables-and-travis
